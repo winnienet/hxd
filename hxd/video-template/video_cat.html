@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="keywords" content="" />
+    <meta name="description" content=""/>
+    <meta content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width" name="viewport"/>
+    <title>影视作品</title>
+    <link href="css/video.css?201949" rel="stylesheet" />
+</head>
+<body>
+<div class="container" id="doc">
+    <!-- header -->
+    <tal:block condition="php: catid==10">
+        <header class="cat_vhd">
+            <h4>电影级短片</h4>
+            <small>original-video</small>
+        </header>
+    </tal:block>
+    <tal:block condition="php: catid==6">
+        <header class="cat_vhd">
+            <h4 class="not">定制级短片</h4>
+            <small>unorigina-video</small>
+        </header>
+    </tal:block>
+    <!-- main_wrap -->
+    <section class="video_cat_wrap wrapfix">
+        <div class="vd_list">
+            <ul class="list">
+                <li class="">
+                    <h4>初级</h4>
+                    <div class="sp">
+                        <div class="pic_wp">
+                            <a class="item" target="_blank" href="${contentList/primary/0/videoUrl}"><img src="css/img/demo.jpg" alt="" tal:attributes="src php:empty(contentList['primary'][0]['thumb']) ? 'css/img/demo.jpg' : contentList['primary'][0]['thumb'] " /></a>
+                        </div>
+                    </div>
+                    <div class="intro">
+                        <h5 tal:content="contentList/primary/0/title">涵哥:和弈成抢七来做视频不知想我了吗</h5>
+                    </div>
+                    <div class="other_intro">
+                        <span>¥<tal:block content="contentList/primary/0/price">3500</tal:block></span>
+                        <a href="tel:13500002725" class="chat">咨询</a>
+                    </div>
+                </li>
+                <li class="">
+                    <h4>中级</h4>
+                    <div class="sp">
+                        <div class="pic_wp">
+                            <a class="item" target="_blank" href="${contentList/middle/0/videoUrl}"><img src="css/img/demo.jpg" alt="" tal:attributes="src php:empty(contentList['middle'][0]['thumb']) ? 'css/img/demo.jpg' : contentList['middle'][0]['thumb'] "/></a>
+                        </div>
+                    </div>
+                    <div class="intro">
+                        <h5 tal:content="contentList/middle/0/title">涵哥:和弈成抢七来做视频不知想我了吗</h5>
+                    </div>
+                    <div class="other_intro">
+                        <span>¥<tal:block content="contentList/middle/0/price">3500</tal:block></span>
+                        <a href="tel:13500002725" class="chat">咨询</a>
+                    </div>
+                </li>
+                <li class="">
+                    <h4>高级</h4>
+                    <div class="sp">
+                        <div class="pic_wp">
+                            <a class="item" target="_blank" href="${contentList/advanced/0/videoUrl}"><img src="css/img/demo.jpg" alt="" tal:attributes="src php:empty(contentList['advanced'][0]['thumb']) ? 'css/img/demo.jpg' : contentList['advanced'][0]['thumb'] "/></a>
+                        </div>
+                    </div>
+                    <div class="intro">
+                        <h5 tal:content="contentList/advanced/0/title">涵哥:和弈成抢七来做视频不知想我了吗</h5>
+                    </div>
+                    <div class="other_intro">
+                        <span>¥<tal:block content="contentList/advanced/0/price">3500</tal:block></span>
+                        <a href="tel:13500002725" class="chat">咨询</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <tal:block metal:use-macro="mobile/macro/cmd.html/footer_it2">
+    <!-- footer -->
+    <footer class="ft_nav2">
+        <ul>
+            <li><a href="tel:15914345732">意见反馈</a></li>
+            <li><a href="http://115.29.249.241/index.php?m=content&c=index&a=mb_aboutUs">@关于一线商机</a></li>
+        </ul>
+    </footer>
+    </tal:block>
+</div>
+<script src="../common/js/lib/zepto.min.js"></script>
+<script type="text/javascript" src="js/video.js"></script>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="keywords" content="" />
+    <meta name="description" content=""/>
+    <meta content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width" name="viewport"/>
+    <title tal:content="video/title">图集视频页</title>
+    <link href="css/video.css?201949" rel="stylesheet" />
+</head>
+<body>
+<div class="container" id="doc">
+    <!-- header -->
+    <header class="video_hd">
+        <h4 tal:content="pic/title">吃螺蛳粉上的福克斯的见风当时发生的快乐</h4>
+        <div class="login" tal:condition="not: userInfo">
+            <a href="/index.php?m=member&c=index&a=login_mb">登录</a>
+            <a href="/index.php?m=member&c=index&a=register_mb">注册</a>
+            <!-- 登录后 -->
+        </div>
+        <div class="login" tal:condition="userInfo">
+            <a class="logined" href="/index.php?m=member&c=index&a=init_mb">个人中心</a>
+        </div>
+    </header>
+    <!-- main_wrap -->
+    <section class="video_wrap wrapfix">
+        <!-- S 焦点图 -->
+        <section class="mod_focus">
+            <div id="slider" class="slider">
+                <ul class="img_scroll">
+                        <tal:block repeat="value pic/focus">
+                            <li class="img_con">
+                                <a href="#">
+                                    <img src="css/img/demo.jpg" tal:attributes="src value/url" alt="" />
+                                    <span class="bg"></span>
+                                    <p>英雄联盟总决赛！</p>
+                                </a>
+                            </li>
+                        </tal:block>
+                        <tal:block replace="">
+                         <li class="img_con">
+                            <a href="#">
+                                <img src="css/img/demo.png" alt="" />
+                                <span class="bg"></span>
+                                <p>英雄联盟总决赛！</p>
+                            </a>
+                        </li>
+                        <li class="img_con">
+                            <a href="#">
+                                <img src="css/img/login_bg.jpg" alt="" />
+                                <span class="bg"></span>
+                                <p>英雄联盟总决赛！</p>
+                            </a>
+                        </li>
+                        <li class="img_con">
+                            <a href="#">
+                                <img src="css/img/demo.png" alt="" />
+                                <span class="bg"></span>
+                                <p>英雄联盟总决赛！</p>
+                            </a>
+                        </li>
+                        </tal:block>
+                        <!-- <tal:block repeat="value pic/focus">
+                            <li class="img_con">
+                                <a href="#">
+                                    <img src="img/demo.jpg" tal:attributes="src value/url" alt="" />
+                                    <span class="bg"></span>
+                                    <p>英雄联盟总决赛！</p>
+                                </a>
+                            </li>
+                        </tal:block>
+                        <tal:block replace="">
+                            <li class="img_con">
+                                <a href="#">
+                                    <img src="img/demo.png" alt="" />
+                                    <span class="bg"></span>
+                                    <p>英雄联盟总决赛！</p>
+                                </a>
+                            </li>
+                            <li class="img_con">
+                                <a href="#">
+                                    <img src="http://www.qr-code-video.net/uploadfile/2014/0908/20140908092310498.jpg" alt="" />
+                                    <span class="bg"></span>
+                                    <p>英雄联盟总决赛！</p>
+                                </a>
+                            </li>
+                        </tal:block> -->
+                </ul>
+                <!-- <ul class="img_count" id="img_count">
+                </ul> -->
+            </div>
+        </section>
+        <!-- E 焦点图 -->
+        <!-- <div class="video_player">
+            <video controls="controls" preload="none" id="video" src="http://59.32.213.20/fcs173.56.com/flvdownload/13/6/140529684326hd.flv.mp4?t=4wf3YiePQhcWZf661_vQqw&r=66653&e=1405519416&v=1&s=1&tt=69&sz=2644468&vid=119536190" tal:attributes="src video/mp4Url;poster php: video['thumbAd'] ? video['thumbAd']  : 'http://www.qr-code-video.net/templates/mobile/video/css/img/demo.png' " poster="http://www.qr-code-video.net/templates/mobile/video/css/img/demo.png">
+                <p>你的浏览器不支持html5视频播放</p>
+            </video>
+            <script type="text/javascript">
+            var elem = document.getElementById("video");
+            if (elem.requestFullscreen) {
+              elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) {
+              elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) {
+              elem.webkitRequestFullscreen();
+            }
+            </script>
+        </div> -->
+        <div class="op_tools">
+            <ul class="clearfix">
+                <li class="qrcode">
+                    <a id="get_qr_code" href="javascript:void(0);">
+                        <span>二维码</span>
+                    </a>
+                </li>
+                <li class="phone" tal:condition="serviceList/mobile">
+                    <a href="tel:${serviceList/mobile}">
+                        <span>电话</span>
+                    </a>
+                </li>
+                <li class="msg"  tal:condition="serviceList/smsPhone">
+                    <a href="sms:${serviceList/smsPhone}">
+                        <span>短信</span>
+                    </a>
+                </li>
+                <li class="wechat" tal:condition="serviceList/wechat">
+                    <a href="wechat://${serviceList/wechat}">
+                        <span>微信</span>
+                    </a>
+                </li>
+                <li class="qq"  tal:condition="serviceList/qq">
+                    <a href="http://qm.qq.com/cgi-bin/qm/qr?k=CJYQrc8-Tb-LF5CuG7B-Z3xGFhdSumHp" tal:attributes="href serviceList/qq">
+                        <span>QQ</span>
+                    </a>
+                </li>
+                <li class="email" tal:condition="serviceList/email">
+                    <a href="mailto:${serviceList/email}">
+                        <span>邮件</span>
+                    </a>
+                </li>
+                <li class="link" tal:condition="serviceList/officialUrl">
+                    <a target="_blank" href="${serviceList/officialUrl}">
+                        <span>链接</span>
+                    </a>
+                </li>
+                <li class="shop" tal:condition="serviceList/shopUrl">
+                    <a target="_blank" href="${serviceList/shopUrl}">
+                        <span>淘宝链接</span>
+                    </a>
+                </li>
+                <li class="position" tal:condition="serviceList/address">
+                    <a target="_blank" href="http://map.baidu.com/mobile/webapp/search/search/qt=s&wd=${serviceList/address}">
+                        <span>位置</span>
+                    </a>
+                </li>
+                <li class="leave_ms" tal:condition="serviceList/msgUrl">
+                    <a target="_blank" href="${serviceList/msgUrl}">
+                        <span>位置</span>
+                    </a>
+                </li>
+                <li class="plus">
+                    <a href="http://www.qr-code-video.net/index.php?m=content&c=index&a=mb_product">
+                        <span>+附加</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="vtip">
+            <div class="info">
+                <p>播放:<tal:block content="pic/click">12949</tal:block>次</p>
+                <!-- <p>时长:<tal:block content="php: dataformat(video['duration'])">3:20</tal:block></p> -->
+            </div>
+            <a id="iwmake" class="imake" href="http://www.qr-code-video.net/guide.php">我要制作</a>
+        </div>
+        <div class="vd_iwp">
+            <h4>关于<tal:block tal:content="pic/title">精英配件今夏</tal:block></h4>
+            <div class="arc_ct">
+                <p tal:content="structure pic/content">二十一世纪是高科技和信息产业风驰电逝高速发展的年代。十年前有谁能预见到阿里巴巴、淘宝网今时今日所起的巨大能量？谁能想象QQ——飞信——微信的“大变脸”？谁能想象特快列车——动车<span>更多</span></p>
+            </div>
+            <tal:block condition="referpic">
+                <!-- <h4>企业相关视频</h4> -->
+                <div id="change_tab_hd" class="change_tab_hd">
+                    <span class="cur">企业相关图集</span>
+                    <span>企业相关视频</span>
+                </div>
+                <div class="vd_list">
+                    <!-- 图集 -->
+                    <div class="chg_tab">
+                        <ul class="list">
+                            <tal:block repeat="value referpic">
+                                <li class="">
+                                    <a class="item" href="/index.php?m=content&c=index&a=mb_pic&id=${value/id}&catid=${value/catid}">
+                                        <div class="sp">
+                                            <div class="pic_wp">
+                                                <span tal:content="value/title">穿越火线</span>
+                                                <img src="css/img/demo.jpg" alt="" tal:attributes="src php: empty(value['thumb']) ? 'css/img/demo.jpg' :  value['thumb'] " />
+                                            </div>
+                                        </div>
+                                        <div class="intro">
+                                            <h5 tal:content="value/title">涵哥:和弈成抢七来做视频不知想我了吗</h5>
+                                            <p class="heat">时间:<tal:block content="php: date('Y/m/d' ,value['updatetime'])">2014/12/04</tal:block></p>
+                                            <p class="heat">观看:<tal:block content="value/click">10086</tal:block></p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </tal:block>
+                            <tal:block replace="">
+                                <li class="">
+                                    <a class="item" target="_blank" href="#">
+                                        <div class="sp">
+                                            <div class="pic_wp">
+                                                <span>穿越火线</span>
+                                                <img src="css/img/demo.jpg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="intro">
+                                            <h5>涵哥:和弈成抢七来做视频不知想我了吗</h5>
+                                            <p class="heat">时间:2014/12/04</p>
+                                            <p class="heat">观看:10086</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a class="item" target="_blank" href="#">
+                                        <div class="sp">
+                                            <div class="pic_wp">
+                                                <span>穿越火线</span>
+                                                <img src="css/img/demo.jpg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="intro">
+                                            <h5>涵哥:和弈成抢七来做视频不知想我了吗</h5>
+                                            <p class="heat">时间:2014/12/04</p>
+                                            <p class="heat">观看:10086</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a class="item" target="_blank" href="#">
+                                        <div class="sp">
+                                            <div class="pic_wp">
+                                                <span>穿越火线</span>
+                                                <img src="css/img/demo.jpg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="intro">
+                                            <h5>涵哥:和弈成抢七来做视频不知想我了吗</h5>
+                                            <p class="heat">时间:2014/12/04</p>
+                                            <p class="heat">观看:10086</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </tal:block>
+                        </ul>
+                    </div>
+                    <!-- 视频 -->
+                    <div class="chg_tab hidden">
+                        <ul class="list">
+                            <tal:block repeat="value referVideo">
+                                <li class="">
+                                    <a class="item" href="/index.php?m=content&c=index&a=mb_video&id=${value/id}&catid=${value/catid}">
+                                        <div class="sp">
+                                            <div class="pic_wp">
+                                                <span tal:content="value/title">穿越火线</span>
+                                                <img src="css/img/demo.jpg" alt="" tal:attributes="src php: empty(value['thumb']) ? 'css/img/demo.jpg' :  value['thumb'] " />
+                                            </div>
+                                        </div>
+                                        <div class="intro">
+                                            <h5 tal:content="value/title">涵哥:和弈成抢七来做视频不知想我了吗</h5>
+                                            <p class="heat">时间:<tal:block content="php: date('Y/m/d' ,value['updatetime'])">2014/12/04</tal:block></p>
+                                            <p class="heat">观看:<tal:block content="value/click">10086</tal:block></p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </tal:block>
+                            <tal:block replace="">
+                                <li class="">
+                                    <a class="item" target="_blank" href="#">
+                                        <div class="sp">
+                                            <div class="pic_wp">
+                                                <span>穿越火线</span>
+                                                <img src="css/img/demo.jpg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="intro">
+                                            <h5>涵哥:和弈成抢七来做视频不知想我了吗</h5>
+                                            <p class="heat">时间:2014/12/04</p>
+                                            <p class="heat">观看:10086</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </tal:block>
+                        </ul>
+                    </div>
+                </div>
+            </tal:block>
+        </div>
+    </section>
+</div>
+    <tal:block metal:use-macro="mobile/macro/cmd.html/footer_it2">
+    <!-- footer -->
+    <footer class="ft_nav2">
+        <ul>
+            <li><a href="tel:15914345732">意见反馈</a></li>
+            <li><a href="http://115.29.249.241/index.php?m=content&c=index&a=mb_aboutUs">@关于一线商机</a></li>
+        </ul>
+    </footer>
+    </tal:block>
+<section id="pop_focus" class="pop_focus mod_focus">
+    <span class="close">X</span>
+    <div id="pop_slider" class="slider">
+        
+    </div>
+</section>
+<script>
+    var popSlider = [
+            'css/img/demo.jpg',
+            'css/img/demo.png',
+            'css/img/login_bg.jpg'
+        ]
+</script>
+<script src="../common/js/lib/zepto.min.js"></script>
+<script src="js/swipe.js"></script>
+<script type="text/javascript" src="js/video.js"></script>
+</body>
+</html>
+
+
+
+
+

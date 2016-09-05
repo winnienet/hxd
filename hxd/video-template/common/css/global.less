@@ -1,0 +1,238 @@
+/**
+*  Author Marko
+ * HTML5 CSS3 Reset
+ */
+* {
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video{
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+    list-style-type:none;
+    font-style:normal;
+    font: 14px "hiragino sans gb",arial;
+}
+input[type="submit"], input[type="button"], button {
+    padding:0;
+    margin:0;
+}
+body {
+    line-height:1;
+}
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+nav ul {
+    list-style:none;
+}
+blockquote, q {
+    quotes:none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+del {
+    text-decoration: line-through;
+}
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+input, select {
+    vertical-align:middle;
+}
+
+body{
+    min-width:320px;
+}
+
+.hidden{
+    display:none;
+}
+
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+
+/*global times*/
+@x:1.5;
+
+/*common*/
+.ft_nav2{
+    position:absolute;
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:43px;
+    background-image:-webkit-gradient(linear,0% 0%, 0% 100%, from(#fcfcfc), to(#cfcfcf));
+    /*shadow*/
+    @sd: 2px -3px 10px #E2E2E2;
+    -moz-box-shadow:@sd; 
+    -webkit-box-shadow:@sd; 
+    box-shadow:@sd;
+    li{
+        padding:0 2%;
+        a{
+            height:100%;
+            line-height:43px;
+            color:#999999;
+            text-decoration:none;
+        }
+        &:nth-of-type(1){
+            float:left;
+        }
+        &:nth-of-type(2){
+            float:right;
+        }
+    }
+}
+.mod_4btn{
+    position:absolute;
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:43px;
+    background-image:-webkit-gradient(linear,0% 0%, 0% 100%, from(#fcfcfc), to(#cfcfcf));
+    /*shadow*/
+    @sd: 2px -3px 10px #E2E2E2;
+    -moz-box-shadow:@sd; 
+    -webkit-box-shadow:@sd; 
+    box-shadow:@sd;
+    ul{
+        display:-webkit-box;
+        width:100%;
+        overflow:hidden;
+        li{
+            height:43px;
+            width:25%;
+            overflow:hidden;
+            a{
+                display:block;
+                height:43px;
+                text-indent:-999em;
+                background-repeat:no-repeat;
+                background-position:50% 50%;
+                background-size:40px/@x auto;
+            }
+            &:nth-of-type(1){
+                a{
+                    background-size:20px auto;
+                    background-image:url(../../common/css/img/phone.png);
+                }
+            }
+            &:nth-of-type(4){
+                a{
+                    background-image:url(../../common/css/img/msg.png);
+                }
+            }
+            &:nth-of-type(3){
+                a{
+                    background-image:url(../../common/css/img/email.png);
+                }
+            }
+            &:nth-of-type(2){
+                a{
+                    background-size:30px auto;
+                    background-image:url(../../common/css/img/chat.png);
+                }
+            }
+        }
+    }
+}
+.gray_hd{
+    height:45px;
+    background:#555555;
+    overflow:hidden;
+    position:relative;
+    h3{
+        text-align:center;
+        color:#FFFFFF;
+        line-height:45px;
+    }
+    .back{
+        position:absolute;
+        left:0;
+        top:0;
+        display:block;
+        background:url(../../common/css/img/back.png) 50% 50% no-repeat;
+        text-indent:-999em;
+        height:100%;
+        background-size:10px auto;
+        width:45px;
+    }
+    .rlog{
+        display: block;
+        float: right;
+        margin: 9px 8px 0 0;
+        width: 46px;
+        height: 25px;
+        line-height: 27px;
+        color: #fe6c00;
+        text-align: center;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        z-index: 10;
+        position: relative;
+        background-color: #fbfefe;
+        text-decoration:none;
+        color:#333333;
+    }
+}
+
+
